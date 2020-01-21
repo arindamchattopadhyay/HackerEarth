@@ -1,0 +1,20 @@
+n, m, l = map(int,raw_input().split())
+items = map(int,raw_input().split())
+ 
+modc = [0] * m
+for i in items: modc[i % m] += 1
+ 
+mod = 10 ** 9 + 7
+dp = [0] * m
+dp[0] = 1
+ 
+for i in xrange(n): # calculation for each day
+    nextLayer = [0] * m
+    for j in xrange(m):
+        for k in range(m):
+            rmod = (j + k) % m
+            nextLayer[rmod] += dp[j] * modc[k]
+            nextLayer[rmod] %= mod
+    dp = nextLayer
+    #print dp
+print(dp[0])
