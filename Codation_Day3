@@ -1,3 +1,4 @@
+//https://www.hackerearth.com/challenges/college/codathon20-nitbhopal/algorithm/day-3-2/
 n, m, l = map(int,raw_input().split())
 items = map(int,raw_input().split())
  
